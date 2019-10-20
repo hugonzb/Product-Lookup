@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingApp">
+<head>
+<title>View Cart</title>
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-resource.min.js"></script>
+        <script src="js/ngStorage.min.js"></script>
+        <script src="js/shopping.js"></script>
+        <link href="css/StyleSheet.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body> 
+
+    <div ng-include="'menu.html'" ></div>
+
+<header>
+  <div class = "mainheader">
+    <h1>Shopping Cart</h1>
+  </div>
+</header>
+
+<div class = "table" ng-controller="CartController as cartCtrl">
+	<table>         
+            <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+            </tr>
+            <tr ng-repeat="item in cartCtrl.items">
+                <td>{{item.product.name}}</td>
+                <td>{{item.salePrice}}</td>
+                <td>{{item.quantityPurchased}}</td>
+            </tr>
+        </table>
+        <br><br>
+        <button class = "buttons" ng-click="cartCtrl.checkoutCart()"> Check Out Cart </button>
+</div>

@@ -1,0 +1,55 @@
+@startuml
+
+skinparam style strictuml
+
+actor "User" as user
+participant "Administration menu" as mainmenu <<dialog>>
+mainmenu++
+
+user -> mainmenu : Clicks "View Products" button
+create "ProductViewer" as viewer <<dialog>>
+mainmenu -> viewer: Construct
+
+viewer++
+
+create "ProductDatabase" as productdatabase <<dao>>
+viewer -> productdatabase : Construct
+productdatabase++
+participant "DbConnection" as dbconnection <<dao>>
+productdatabase -> dbconnection++ : getDefaultConnectionUri()
+dbconnection -> productdatabase : return DEFAULT_URI
+productdatabase--
+dbconnection--
+
+database H2
+create "SimpleListModel" as slm <<gui helper>>
+viewer -> slm : Construct
+viewer -> user: Display all products
+
+user -> viewer: Types in product ID and presses "Search"
+
+viewer -> viewer : searchBar.getText();
+viewer -> productdatabase++ : searchProducts(productID)
+productdatabase -> dbconnection++ : getConnectionUri(productUri)
+
+dbconnection -> H2++ : getConnection()
+H2 -> productdatabase : return connection
+dbconnection--
+H2--
+productdatabase -> H2++ : prepareStatement(sql)
+H2--
+productdatabase -> productdatabase : stmt.setString(1, productID)
+productdatabase -> H2++ : executeQuery()
+H2 -> productdatabase : Return result of query and put into ResultSet
+H2--
+productdatabase -> productdatabase : Get product details from ResultSet and put them into corresponding variables
+
+productdatabase -> viewer : return product
+productdatabase--
+viewer -> slm++ : updateItems(product)
+viewer -> viewer : viewerList.setModel(slm)
+viewer -> user : Display all products in the database
+viewer--
+slm--
+
+@enduml

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingApp">
+<head>
+<title>Create an Account</title>
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-resource.min.js"></script>
+        <script src="js/ngStorage.min.js"></script>
+        <script src="js/shopping.js"></script>
+        <link href="css/StyleSheet.css" rel="stylesheet" type="text/css">
+</head>
+
+<body ng-controller="CustomerController as custCtrl"> 
+
+   <div ng-include="'menu.html'" ></div>
+
+<header>
+  <div class = "mainheader">
+    <h1>Create an Account</h1>
+  </div>
+</header>
+
+<div class = "table">
+    <br><br>
+        Account Details
+    <br><br>
+    <div class = "accountdetails" align = "right">
+
+        <form ng-submit="custCtrl.registerCustomer(customer)" required>
+            <label> Username: </label><input type = "text" ng-model="customer.username" required><br><br>
+            <label> First name: </label><input type = "text" ng-model="customer.firstName" required><br><br>
+            <label> Surname: </label><input type = "text" ng-model="customer.surName" required><br><br>
+            <label> Email: </label><input type = "email" ng-model="customer.emailAddress" required><br><br>
+            <label> Address: </label><input type = "text" ng-model="customer.shippingAddress" required><br><br>
+            <label> Password: </label><input type = "password" ng-model="customer.passWord" required><br><br>
+            <button type = "submit">Create an Account</button>
+        </form>
+    </div>
+</div>
+

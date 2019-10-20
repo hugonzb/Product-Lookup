@@ -1,0 +1,34 @@
+@startuml
+
+skinparam style strictuml
+
+actor "User" as user
+participant "Administration" as mainmenu <<dialog>>
+
+user -> mainmenu++ : Clicks "Add a New Product" button
+create "ProductEditor" as editor <<dialog>>
+mainmenu -> editor: Construct
+
+create "productStorage" as productstorage <<dao>>
+editor -> productstorage: Construct
+
+user -> editor++ : Enters product details 
+editor--
+user -> editor++ : Clicks "Save" 
+editor -> editor : txtID.getText() : id
+editor -> editor : txtName.getText() : name
+editor -> editor : txtareaDescription.getText() : description
+editor -> editor : comboCategory.getSelectedItem() : category
+editor -> editor : txtprice.getText() : price
+editor -> editor : txtQuantityInStock.getText() : quantity
+create "Product : product" as product <<domain>>
+editor -> product : Construct(id, name, description, category, price, quantity)
+editor -> product++ : product.toString() 
+product--
+editor -> productstorage++ : saveProduct(product)
+productstorage--
+
+editor -> editor : dispose()
+destroy editor
+
+@enduml

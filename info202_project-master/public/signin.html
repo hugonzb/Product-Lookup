@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingApp">
+<head>
+<title>Sign In</title>
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-resource.min.js"></script>
+        <script src="js/ngStorage.min.js"></script>
+        <script src="js/shopping.js"></script>
+         <link href="css/StyleSheet.css" rel="stylesheet" type="text/css">
+</head>
+
+<body ng-controller="CustomerController as custCtrl"> 
+
+<div ng-include="'menu.html'" ></div>
+
+<header>
+  <div class = "mainheader">
+    <h1>Sign In</h1>
+  </div>
+</header>
+
+<div class = "table">
+    <form ng-submit="custCtrl.signIn(username, passWord)">
+	<p>{{custCtrl.signInMessage}}</p>
+        <label> Username: </label><input type = "text" ng-model="username" required><br><br>
+        <label> Password: </label><input type = "password" ng-model="passWord" required><br><br>
+        <button type = "submit">Sign In</button>
+    </form>
+    <br>
+    <label> If you don't have an account then you can </label> <a href = "register.html"> create one </a>
+</div>

@@ -1,0 +1,52 @@
+@startuml
+
+ 
+
+skinparam style strictuml
+
+ 
+
+actor "Customer" as customer
+
+participant "Products page" as prodpage <<webpage>>
+
+prodpage++
+
+customer -> prodpage : Clicks "Browse Products" button
+
+participant "ShoppingControllers" as shopping <<javascript>>
+participant "ProductModule" as productmodule <<module>>
+
+prodpage -> shopping++: Creates product controller as prodCtrl
+
+
+
+create "ProductDatabase" as productdatabase <<dao>>
+
+productmodule -> productdatabase: Construct
+
+
+shopping -> productmodule++: Sends query for /api/products
+
+
+
+
+productmodule -> productdatabase++: returnProducts()
+productdatabase -> productmodule: Return all products
+productdatabase--
+
+productmodule -> productmodule: Puts products into /api/products/
+
+
+productmodule -> shopping: Return all products
+productmodule--
+
+prodpage -> shopping: Requests each product from prodCtrl
+shopping -> prodpage--: Return product
+prodpage -> prodpage: Puts product in the table on the page
+
+prodpage -> customer: Redirects to Products page
+prodpage--
+shopping--
+
+@enduml

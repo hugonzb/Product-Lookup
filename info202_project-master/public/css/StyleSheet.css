@@ -1,0 +1,69 @@
+body {
+    background-color: #001f3f;
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.mainheader {
+    width: 100%;
+    background: dimgrey;
+    margin-top: 15px;
+    padding: 1px 1px 1px 1px;
+    font-variant: small-caps;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: white;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+
+}
+
+th, td {
+  padding: 0px 80px;
+}
+
+.images {
+  width: 50%;
+  height: 250px;
+  padding-right: 50px;
+  position: relative;
+  left: 25%;
+}
+
+.accountdetails {
+    width: 55%;
+}
+
+.table {
+    margin-left: 15%;
+    width: 70%;
+    height: 400px;
+    background: darkgrey;
+    margin-top: 15px;
+    border: 3px solid white;
+    padding-bottom: 3cm;
+}
+
+.buttons {
+	background-color: white;
+	color: black;
+	border: 5px solid black;
+  	font-size: 16px;
+  	margin: 10px 1px;
+  	padding: 10px 20px;
+  	font-variant: small-caps;
+
+}
+
+.buttons:hover {
+	background-color: black;
+	color: white;
+}
+
+h1 {
+    font-weight: bold;
+
+}

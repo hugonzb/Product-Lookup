@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="ShoppingApp">
+<head>
+<title>Quantity to purchase</title>
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-resource.min.js"></script>
+        <script src="js/ngStorage.min.js"></script>
+        <script src="js/shopping.js"></script>
+        <link href="css/StyleSheet.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body ng-controller="ProductController as prodCtrl"> 
+
+    <div ng-include="'menu.html'" ></div>
+
+<header>
+  <div class = "mainheader">
+    <h1>How many do you want to buy?</h1>
+  </div>
+</header>
+
+<div class = "table" ng-controller="CartController as cartCtrl">
+	<table>
+             <tr>
+                    <th>Product ID</th>
+                    <th>Name</th>
+                    <th>Description</th> 
+                    <th>Price</th>
+                    <th>Available</th>
+            </tr>
+            <tr>
+                <td>{{prodCtrl.selectedProduct.productID}}</td>
+                <td>{{prodCtrl.selectedProduct.name}}</td>
+                <td>{{prodCtrl.selectedProduct.description}}</td>
+                <td>{{prodCtrl.selectedProduct.listPrice}}</td>
+                <td>{{prodCtrl.selectedProduct.quantityInStock}}</td>
+            </tr>
+        </table>
+        <br><br>
+        <form ng-submit="cartCtrl.addtoCart(quantitySpecified)">
+                <label> Quantity to buy </label>
+                <br><br>
+                <label> How many? </label><input type = "text" ng-model="quantitySpecified" required>
+                <button type = "submit">Add to Cart</button>
+        </form>
+</div>

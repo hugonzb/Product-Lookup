@@ -1,0 +1,28 @@
+@startuml
+
+skinparam style strictuml
+
+actor "User" as user
+participant "Administration menu" as mainmenu <<dialog>>
+mainmenu++
+
+user -> mainmenu : Clicks "View Products" button
+create "ProductViewer" as viewer <<dialog>>
+mainmenu -> viewer: Construct
+
+create "ProductStorage" as productstorage <<dao>>
+viewer -> productstorage : Construct
+productstorage -> productstorage: productList.add(product)
+productstorage -> productstorage : categoryList.add(product.getCategory())
+viewer -> productstorage++ : returnProducts()
+productstorage -> viewer : return productList
+productstorage--
+create "SimpleListModel" as slm <<gui helper>>
+viewer -> slm : Construct
+productstorage--
+viewer -> slm++ : updateItems(allProducts)
+viewer -> viewer : viewerList.setModel(slm)
+viewer -> user : Display all products in the database
+slm--
+
+@enduml

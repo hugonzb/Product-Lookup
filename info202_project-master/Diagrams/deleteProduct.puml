@@ -1,0 +1,54 @@
+@startuml
+
+skinparam style strictuml
+
+actor "User" as user
+participant "Administration menu" as mainmenu <<dialog>>
+mainmenu++
+
+user -> mainmenu : Clicks "View Products" button
+create "ProductViewer" as viewer <<dialog>>
+mainmenu -> viewer: Construct
+viewer++
+
+create "ProductDatabase" as productdatabase <<dao>>
+viewer -> productdatabase : Construct
+participant "DbConnection" as dbconnection <<dao>>
+productdatabase++
+productdatabase -> dbconnection++ : getDefaultConnectionUri()
+dbconnection -> productdatabase : return DEFAULT_URI
+dbconnection--
+productdatabase--
+
+database H2
+create "SimpleListModel" as slm <<gui helper>>
+viewer -> slm : Construct
+viewer -> user: Display all products
+user -> viewer : Selects product and presses "Delete"
+viewer -> viewer : viewerList.getSelectedValue();
+viewer -> viewer : viewerOptionpane.showConfirmDialog(this, "Confirm deletion")
+viewer -> user : Confirm deletion
+user -> viewer : Presses "Yes"
+viewer -> productdatabase++ : removeProduct(product)
+productdatabase -> dbconnection++ : getConnectionUri(productUri)
+
+dbconnection -> H2++ : getConnection()
+H2 -> productdatabase : return connection
+dbconnection--
+H2--
+productdatabase -> H2++ : prepareStatement(sql)
+H2--
+productdatabase -> productdatabase : stmt.setString(1, product.getproductID())
+productdatabase -> H2++ : stmt.executeUpdate()
+H2--
+
+viewer -> productdatabase : returnProducts()
+productdatabase -> viewer : return products
+productdatabase--
+viewer -> slm++ : updateItems(products)
+viewer -> viewer : viewerList.setModel(slm)
+viewer -> user : Display updated products in the database
+slm--
+viewer--
+
+@enduml
