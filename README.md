@@ -2,7 +2,7 @@
 
 <h3>Download NetBeans</h3>
 Download Apache NetBeans 11.3 here: https://netbeans.apache.org/download/nb113/nb113.html
-<br>
+<br><br>
 - Choose the Windows ".exe" installer if you are on Windows OS.
 <br>
 - Choose the Linux ".sh" installer if you are on Linux OS.
@@ -23,14 +23,17 @@ The next step is to build the project. Click the hammer on the top menu bar of N
 Download the H2 Database here: https://www.h2database.com/html/main.html
 <br>
 - Choose the "Windows Installer" if you are on the Windows OS.
+<br>
 - Choose the "All platforms" zip if you are on MacOSX or Linux OS.
 <br>
 
 Start H2 by running the appropriate start-up script:
 <br>
 
-- For Linux, use the H2 Database file. 
+- For Linux, use the H2 Database file.
+<br>
 - Windows users should be able to use the h2-windows.bat file.
+<br>
 - Mac users should be able to double click the h2.jar file to launch it depending on how your computer is configured. If that doesn’t work you will need to use Terminal to navigate to h2/bin and run "java -jar h2*.jar"
 <br>
 
