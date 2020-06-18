@@ -14,7 +14,7 @@ Then install it on your device accordingly by running the installer or package. 
 <br>
 <h3> Clone the project into NetBeans</h3>
 Copy this cloning link into your clipboard: https://github.com/hugonzb/Product-Lookup.git
-<br>
+<br><br>
 Open to NetBeans and click on 'Team' in the top menu bar, then 'Remote' -> 'Clone' then follow the steps to successfully import the repository. Use your GitBucket account with the correct username and password which has authorized access to the repository, otherwise you will not be allowed to clone it.
 <br>
 The next step is to build the project. Click the hammer on the top menu bar of NetBeans which will import all dependencies and build the project so it is ready to be run.
