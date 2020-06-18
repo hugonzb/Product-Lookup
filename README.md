@@ -1,6 +1,4 @@
-# Product-Lookup
-<br><br>
-# Setup Instructions
+# Product-Lookup Setup Instructions
 
 <h3>Download NetBeans</h3>
 Download Apache NetBeans 11.3 here: https://netbeans.apache.org/download/nb113/nb113.html
