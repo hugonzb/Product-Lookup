@@ -37,7 +37,7 @@ Start H2 by running the appropriate start-up script: <br>
 Next follow the H2 configuration steps for either MacOSX or Windows OS accordingly.
 <br>
 <h3> MacOS H2 Instructions </h3>
-Once you have launched H2, you should notice a system tray (yellow 3D cylinder in your top task bar). If you see this icon it means the H2 server is up and running. Click on this icon and press “Create a new database.” This will open up a dialog box which will look like figure 1. Next:
+Once you have launched H2, you should notice a system tray (yellow 3D cylinder in your top task bar). If you see this icon it means the H2 server is up and running. Click on this icon and press “Create a new database.” This will open up a dialog box. Next:
 <br>
 - Set the database path to “./test”.
 <br>
@@ -50,9 +50,9 @@ Once you have launched H2, you should notice a system tray (yellow 3D cylinder i
 
 You should now see a prompt in the bottom part of the console that says “Database was created successfully.”
 <br>
-Next click on the H2 icon again in your task bar and this time press the “H2 console” which should be the first line from the dropdown menu. This will open a new tab in your browser which will look like Figure 3. Here change the JDBC URL ending so that it matches our local H2 database connection of “./test”, alternatively you can also just copy the connection here: “jdbc:h2:tcp://localhost/./test”. Your H2 console should now look like figure 4. Now for the username and password enter “sa” and click connect. 
+Next click on the H2 icon again in your task bar and this time press the “H2 console” which should be the first line from the dropdown menu. This will open a new tab in your browser. Here change the JDBC URL ending so that it matches our local H2 database connection of “./test”, alternatively you can also just copy the connection here: “jdbc:h2:tcp://localhost/./test”. Now for the username and password enter “sa” and click connect. 
 <br>
-Now go into NetBeans again and using the navigational panel, click on INFO202_project -> Source Packages -> dao -> DbConnection. Ensure the URI for Windows users is commented out and the Mac URI is uncommented. Refer to Figure 6.
+Now go into NetBeans again and using the navigational panel, click on INFO202_project -> Source Packages -> dao -> DbConnection. Ensure the URI for Windows users is commented out and the Mac URI is uncommented. 
 <br>
 
 <h3> Windows OS H2 Instructions</h3>
@@ -66,18 +66,15 @@ Once you have launched H2, you should notice a system tray (yellow 3D cylinder) 
 <br>
 - Press "Create".
 <br>
-
-This must match the details in Figure 1 accordingly.
-<br>
 This creates an account which has the credentials that the DAO uses to communicate with the H2 database.
 <br>
 
-Next left-click on the yellow cylinder - this will open up a H2 console in your web browser. Enter the username and password "sa" and click 'Connect', which will sign you in. Refer to Figure 3 to ensure the input matches accordingly.
+Next left-click on the yellow cylinder - this will open up a H2 console in your web browser. Enter the username and password "sa" and click 'Connect', which will sign you in. 
 <br>
 
 Now go into NetBeans again and using the navigational panel, click on INFO202_project -> Source Packages -> dao -> DbConnection
 <br>
-Ensure the URI for Mac users is commented out and the Windows URI is uncommented. Refer to Figure 5.
+Ensure the URI for Mac users is commented out and the Windows URI is uncommented. 
 <br>
 <h3> Creating H2 SQL tables </h3>
 In NetBeans use the navigational panel, click on INFO202_project -> Resources -> <default package> -> schema.sql, and copy the entire contents of this file. Return to the H2 console in your browser, paste the contents in the box, and click 'Run'.  
