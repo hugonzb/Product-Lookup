@@ -4,7 +4,9 @@
 Download Apache NetBeans 11.3 here: https://netbeans.apache.org/download/nb113/nb113.html
 <br>
 - Choose the Windows ".exe" installer if you are on Windows OS.
+<br>
 - Choose the Linux ".sh" installer if you are on Linux OS.
+<br>
 - Choose the MacOS ".dmg" installer if you are on MacOSX.
 <br>
 
