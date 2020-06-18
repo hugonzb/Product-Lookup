@@ -19,14 +19,14 @@ Open to NetBeans and click on 'Team' in the top menu bar, then 'Remote' -> 'Clon
 <br>
 The next step is to build the project. Click the hammer on the top menu bar of NetBeans which will import all dependencies and build the project so it is ready to be run.
 <br>
-<h3>Downloading and Configuring H2</h3>
+<h3>Downloading and Configuring H2</h3> 
 Download the H2 Database here: https://www.h2database.com/html/main.html
 <br>
 - Choose the "Windows Installer" if you are on the Windows OS.
 <br>
 - Choose the "All platforms" zip if you are on MacOSX or Linux OS.
 <br>
-Start H2 by running the appropriate start-up script:
+Start H2 by running the appropriate start-up script: <br>
 - For Linux, use the H2 Database file.
 <br>
 - Windows users should be able to use the h2-windows.bat file.
