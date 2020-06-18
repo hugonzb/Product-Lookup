@@ -28,7 +28,7 @@ Download the H2 Database here: https://www.h2database.com/html/main.html
 <br>
 
 Start H2 by running the appropriate start-up script:
-<br>
+<br><br>
 - For Linux, use the H2 Database file.
 <br>
 - Windows users should be able to use the h2-windows.bat file.
