@@ -11,7 +11,7 @@ Download Apache NetBeans 11.3 here: https://netbeans.apache.org/download/nb113/n
 Then install it on your device accordingly by running the installer or package. For additional instructions, navigate to the "Get Help" tab at the top right. 
 <br>
 <h3> Clone the project into NetBeans</h3>
-Copy this cloning link into your clipboard: https://isgb.otago.ac.nz/info310/git/aleda46p/studentstaffcon.git
+Copy this cloning link into your clipboard: https://github.com/hugonzb/Product-Lookup.git
 <br>
 Open to NetBeans and click on 'Team' in the top menu bar, then 'Remote' -> 'Clone' then follow the steps to successfully import the repository. Use your GitBucket account with the correct username and password which has authorized access to the repository, otherwise you will not be allowed to clone it.
 <br>
@@ -50,7 +50,7 @@ You should now see a prompt in the bottom part of the console that says “Datab
 <br>
 Next click on the H2 icon again in your task bar and this time press the “H2 console” which should be the first line from the dropdown menu. This will open a new tab in your browser which will look like Figure 3. Here change the JDBC URL ending so that it matches our local H2 database connection of “./test”, alternatively you can also just copy the connection here: “jdbc:h2:tcp://localhost/./test”. Your H2 console should now look like figure 4. Now for the username and password enter “sa” and click connect. 
 <br>
-Now go into NetBeans again and using the navigational panel, click on INFO310_group_project -> Source Packages -> dao -> DbConnection. Ensure the URI for Windows users is commented out and the Mac URI is uncommented. Refer to Figure 6.
+Now go into NetBeans again and using the navigational panel, click on INFO202_project -> Source Packages -> dao -> DbConnection. Ensure the URI for Windows users is commented out and the Mac URI is uncommented. Refer to Figure 6.
 <br>
 
 <h3> Windows OS H2 Instructions</h3>
@@ -73,17 +73,17 @@ This creates an account which has the credentials that the DAO uses to communica
 Next left-click on the yellow cylinder - this will open up a H2 console in your web browser. Enter the username and password "sa" and click 'Connect', which will sign you in. Refer to Figure 3 to ensure the input matches accordingly.
 <br>
 
-Now go into NetBeans again and using the navigational panel, click on INFO310_group_project -> Source Packages -> dao -> DbConnection
+Now go into NetBeans again and using the navigational panel, click on INFO202_project -> Source Packages -> dao -> DbConnection
 <br>
 Ensure the URI for Mac users is commented out and the Windows URI is uncommented. Refer to Figure 5.
 <br>
-<h3> Importing Default Data into H2 </h3>
-In NetBeans use the navigational panel, click on INFO310_group_project -> Resources -> <default package> -> schema.sql, and copy the entire contents of this file. Return to the H2 console in your browser, paste the contents in the box, and click 'Run'.  
+<h3> Creating H2 SQL tables </h3>
+In NetBeans use the navigational panel, click on INFO202_project -> Resources -> <default package> -> schema.sql, and copy the entire contents of this file. Return to the H2 console in your browser, paste the contents in the box, and click 'Run'.  
 <br>
 <h3> Run the Service </h3>
 Finally, go back into NetBeans, click the project and press the green arrow button on the top menu bar or simply right click the project and press 'Run'.
 This will start the Jooby server. The program will output a link in the Netbeans console that looks like this: http://localhost:8080/. Copy and paste this link into a web browser and it will display the welcome page for Student-Staff Research Connection.
 <br><br>
-If you are having any problems or confusion regarding these setup instructions, please email Hugo Baird at baihu868@student.otago.ac.nz
+If you are having any problems or confusion regarding these setup instructions, please email Hugo Baird at hugonzb@gmail.com
 He will provide further technical assistance needed.
 <br><br>
